@@ -24,4 +24,9 @@ public class ChatGPTAnalysisResponse {
     SourceSupportAspect sourceSupport;
     PropagandaAspect propaganda;
     PersuasiveStrategiesAspect persuasiveStrategies;
+    String error;
+
+    public ChatGPTAnalysisResponse(String error) {
+        this.error = error;
+    }
 }

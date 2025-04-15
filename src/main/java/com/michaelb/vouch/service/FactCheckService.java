@@ -32,11 +32,21 @@ public class FactCheckService {
 
     public FactCheckResponse factCheck(String claim) {
         System.out.println("Fact-Checking claim: " + claim);
+
         ChatGPTSummaryResponse summaryResponse = this.chatGPTSummaryService.summarizeClaimForSearch(claim);
+        if (summaryResponse.getError() != null)
+            return new FactCheckResponse(null, summaryResponse.getError());
         String claimSummary = summaryResponse.getClaimSummary();
+
         ChatGPTWebSearchResponse webSearchResponse = this.chatGPTWebSearchService.webSearch(claimSummary);
+        if (webSearchResponse.getError() != null)
+            return new FactCheckResponse(null, webSearchResponse.getError());
         List<Source> sources = webSearchResponse.getSources();
+
         ChatGPTAnalysisResponse analysisResponse = this.chatGPTAnalysisService.analyze(claim, sources);
-        return new FactCheckResponse(analysisResponse);
+        if (analysisResponse.getError() != null)
+            return new FactCheckResponse(null, analysisResponse.getError());
+
+        return new FactCheckResponse(analysisResponse, null);
     }
 }

@@ -18,4 +18,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ChatGPTWebSearchResponse {
     List<Source> sources;
+    String error;
 }
