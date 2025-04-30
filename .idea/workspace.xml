@@ -4,52 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ca18a45-6a0b-4e3d-9bc6-693920a45dc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" afterDir="false" />
+    <list default="true" id="2ca18a45-6a0b-4e3d-9bc6-693920a45dc1" name="Changes" comment="Polished Prompts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/controller/FactCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/controller/FactCheckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/OpenAIClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/Source.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FactualClarificationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FactualClarificationAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FinalVerdictAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FinalVerdictAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PropagandaAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PropagandaAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/SourceSupportAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/SourceSupportAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/AnalysisResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/SummaryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/WebSearchResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/FactCheckResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/FactCheckResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/controller/FactCheckController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/controller/FactCheckController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/OpenAIClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Choice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/Source.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/Source.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FactualClarificationAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FactualClarificationAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FinalVerdictAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FinalVerdictAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect$Technique.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect$Technique.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PropagandaAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PropagandaAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/SourceSupportAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/SourceSupportAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/FactCheckResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/FactCheckResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,8 +132,18 @@
       <workItem from="1745501744001" duration="944000" />
       <workItem from="1745595919049" duration="1000" />
       <workItem from="1745852915530" duration="3382000" />
-      <workItem from="1745933973562" duration="9720000" />
+      <workItem from="1745933973562" duration="11034000" />
+      <workItem from="1746023321638" duration="8680000" />
     </task>
+    <task id="LOCAL-00001" summary="Polished Prompts">
+      <option name="closed" value="true" />
+      <created>1745982059680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745982059680</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +159,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Polished Prompts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Polished Prompts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

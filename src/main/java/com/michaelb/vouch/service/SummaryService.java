@@ -40,19 +40,20 @@ public class SummaryService {
 
     private static String getPayload(String claim) {
         String instructions = """
-                You are Stage1_Summarizer.
+                You are a summarizer assistant. You only summarize the selected claim when it is too large (e.g. more than 3 sentences), otherwise just return the same claim.
+                When you summarize your goal is to process the claim for the future websearch to be performed based on this summary.
+                Return a json, as in the schema provided.
                 
-                TASK \s
-                - Receive one user-highlighted passage. \s
-                - Output exactly one JSON object that the calling code will validate against its schema. \s
-                - Inside the single required string field, write ONE neutral sentence (≤ 20 words) that captures the central claim. \s
-                - Do not add opinion, context, hedging, or extra sentences. \s
-                - If the input is empty, meaningless, or contains no clear factual claim, output the error object: { "error": "No valid claim provided" }.
+                REQUIRED
+                - Unless there is an error of some kind. Summary should always be not null.
                 
-                STRICT FORMATTING RULES \s
-                - Never output anything outside the JSON object. \s
-                - All string content must be plain UTF-8 English. \s
-                - Absolutely no Markdown, bold, italics, code blocks, quote characters, smart quotes, ellipses, emojis, or other symbols.
+                GLOBAL ERROR-HANDLING RULES
+                - If any technical or logical error (e.g. claim is not valid or appropriate) happens return empty json with the only field "error".
+                
+                GLOBAL FORMATTING RULES
+                - Produce only the JSON object - nothing else.
+                - Every string must be clean plain UTF-8 English.
+                - Forbidden inside any string: Markdown, bold, italics, code fences, smart quotes, ellipses, unusual symbols, leading/trailing spaces.
                 """;
 
         return """
@@ -67,7 +68,7 @@ public class SummaryService {
                       "schema": {
                         "type": "object",
                         "properties": {
-                          "summary": { "type": "string" },
+                          "summary": { "type": ["string", "null"] },
                           "error": { "type": ["string", "null"] }
                         },
                         "required": ["summary", "error"],

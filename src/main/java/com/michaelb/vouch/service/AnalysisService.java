@@ -63,40 +63,81 @@ public class AnalysisService {
 
     private static String getPayload(String claimSummary, List<Source> sources) {
         String instructions = """
-                You are Stage3_Analyzer.
+                You are the analysis assistant that is part of a fact-checking app.
+                You are given a claim - a selected text from the website that needs to be fact-checked; and a list of sources that were found using WebSearch, that are related to the claim in some way.
+                Your goal is to analyze and compare sources that are related to the claim and give the result in a json format, following the json schema provided, containing multiple Aspects.
                 
-                INPUTS \s
-                - A claim string. \s
-                - An array of source objects (title, source, date, url).
+                It is important to notice that each aspect and almost each json object has a thoughtProcess field.
+                It is not going to be seen by user, however it is required that you fill them in for higher-quality results.
                 
-                TASK \s
-                Fill the provided fact_check_aspects JSON schema accurately.
+                It is also important that each "body" is a short and simple explanation of that aspect.
+                Thought Process is required and it should be fairly concise.
+                Your responses should be based on the thought process.
                 
-                FIELD-SPECIFIC RULES \s
-                - sourceSupport.sources[*]: \s
-                  - For each source, set "stance" to Support / Deny / Neutral. \s
-                  - Add a very short reasoning phrase (plain text). \s
-                - factualClarification: \s
-                  - Summarize what is known and unknown, citing publisher names when helpful (“Reuters states…”, “CDC reports…”). \s
-                  - Do NOT mention “Source 1”, “Source 2”, or numbering of any kind. \s
-                - authenticityScore: \s
-                  - A number from 0 to 100 representing how factually accurate and reliable the claim is based on available evidence.
-                  - 0 = Completely false, fabricated, or unsupported.
-                  - 100 = Fully verified, trustworthy, and supported by strong evidence.
-                  - This score should be derived from both the Source Support stances and the Factual Clarification content, using weighted logic:
-                    - Strongly Deny - 0%
-                    - Deny - 25%
-                    - Neutral - 50%
-                    - Support - 75%
-                    - Strongly Support - 100%
-                  - Factual Clarification should influence the final score by analyzing the quality and relevance of the evidence (e.g., presence of primary sources, clarity of proof, or gaps in verification).
-                  - The final score must reflect both the stance distribution and the depth of supporting evidence, not just agreement.
-                - propagandaTechniques and persuasiveStrategies: \s
-                  - Set to null unless the provided sources directly support content for these sections.
+                It is also really important, that when estimating overall authenticity of the claim, you give the mix of estimate between two things:
+                - Source Support - support from other websites on average.
+                - Logic - pure logic from factual clarification.
                 
-                GLOBAL FORMATTING RULES \s
-                - Produce only the JSON object—nothing else. \s
-                - Every string must be clean plain UTF-8 English. \s
+                KEEP YOUR ANSWERS CONSISTENT. DO NOT CHANGE YOUR MIND FOR THE SAME CLAIM.
+                
+                The most important: CONSIDER THE CLAIM AS SOMEONE'S OPINION, NOT A FACT. DURING THOUGHT PROCESS AND ESTIMATING THE FINAL VERDICT ANSWER TO IT AS SOMEONE'S OPINION. THAT IS THE WHOLE POINT OF THIS APP. ANSWER TO IT AS SOMEONE'S OPINION.
+                
+                Aspects, their content, descriptions, and format in which you are supposed to return your response:
+                - FinalVerdict
+                  - thoughtProcess
+                  - body - Explanation of your verdict
+                  - displayText
+                  - authenticity - Estimate of how much user can trust this claim. A number from 0 to 100, where 0 - completely false and 100 - definitely trustworthy. Again, it should be a mix of both source support and logic from factual clarification.
+                    - For each source consider this:
+                      - Strongly Deny - 0%
+                      - Deny - 25%
+                      - Neutral - 50%
+                      - Support - 75%
+                      - Strongly Support - 100%
+                    - For sources calculate the average of these.
+                    - For factual clarification, calculate your estimate based on how logical the fact sounds, from 0% to 100%
+                    - Mix these two, try to keep it consistent by calculating the average.
+                  - verdict - Your verdict worded
+                - FactualClarification
+                  - thoughtProcess
+                  - body - The Fact. Should explain what happened from the logical side
+                  - analysis - Explain how you came to this conclusion.
+                - SourceSupport
+                  - sources - Array of sources you are already given with. You DO NOT change the sources, their urls, etc. You analyze and add your analysis on top. These will be as well displayed among other aspects.
+                    - source
+                      - title
+                      - url
+                      - snippet
+                      - source
+                      - date
+                      - thoughtProcess
+                      - body - Quick explanation of why this source support/denies/neutral etc.
+                      - support - One of Strongly Deny / Deny / Neutral / Support / Strongly Support the claim
+                - Propaganda
+                  - Use this aspect only if clearly applicable.
+                  - thoughtProcess
+                  - body
+                  - leftSideName
+                  - rightSideName
+                  - biasSlider - A number from 0 to 100, which shows which side this claim is more biased towards.
+                - PersuasiveStrategies
+                  - Use this aspect only if clearly applicable.
+                  - thoughtProcess
+                  - techniques - Array of persuasive techniques used in the selected claim OR, IMPORTANT - if the message behind this claim, e.g. from factual clarification, is using some persuasive techniques.
+                    - name
+                    - description
+                
+                
+                REQUIRED
+                - Every thoughtProcess is REQUIRED and has to be not null
+                - Unless there is an error of some kind. Aspects FinalVerdict, FactualClarification, and SourceSupport are required and must always be not null.
+                
+                GLOBAL ERROR-HANDLING RULES
+                - If any technical or logical error (e.g. claim is not valid or appropriate, or sources are invalid) happens return empty json with the only field "error".
+                
+                GLOBAL FORMATTING RULES
+                - Produce only the JSON object - nothing else.
+                - Every string must be clean plain UTF-8 English.
                 - Forbidden inside any string: Markdown, bold, italics, code fences, smart quotes, ellipses, unusual symbols, leading/trailing spaces.
                 """;
 
@@ -104,7 +145,7 @@ public class AnalysisService {
 
         return """
                 {
-                  "model": "gpt-4o",
+                  "model": "gpt-4.1",
                   "instructions": %s,
                   "input": %s,
                   "text": {
@@ -115,11 +156,11 @@ public class AnalysisService {
                         "schema": {
                             "type": "object",
                             "properties": {
-                              "thoughtProcess": { "type": "string" },
+                              "thoughtProcess": { "type": ["string", "null"] },
                               "sourceSupport": {
-                                "type": "object",
+                                "type": ["object", "null"],
                                 "properties": {
-                                  "thoughtProcess": { "type": "string" },
+                                  "thoughtProcess": { "type": "string"},
                                   "body": { "type": "string" },
                                   "sources": {
                                     "type": "array",

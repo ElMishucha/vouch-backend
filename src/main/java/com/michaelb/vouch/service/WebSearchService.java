@@ -50,26 +50,46 @@ public class WebSearchService {
 
     private static String getPayload(String claimSummary) {
         String instructions = """
-                You are Stage2_WebSearch.
+                You are a websearch assistant that is part of a fact-checking app.
                 
-                TASK \s
-                - Using the claim provided, list up to five recent (≤ 12 months old) credible sources. \s
-                - Acceptable domains: major international news outlets (AP, Reuters, BBC, NYT, etc.), established fact-checkers (PolitiFact, Snopes, Full Fact, FactCheck.org), or academic/government sites ending in .edu or .gov. \s
-                - Exclude blogs, social media, pay-for-placement sites, heavily biased publishers, and content farms. \s
+                Claim is the selected text from a website that is to be fact-checked.
                 
-                OUTPUT SCHEMA \s
-                { "sources": [ { "title": ..., "source": ..., "date": ..., "url": ... } ] } \s
-                If no qualifying sources exist, return { "error": "No credible recent sources found for this claim" }.
+                Your goal is to use your web-search tool to search for Sources that are related to this claim in some way.
+                It can be strongly deny, deny, neutral, support, or strongly support.
                 
-                STRICT FORMATTING RULES \s
-                - Output only the JSON object—nothing before or after it. \s
-                - All field values must be plain UTF-8 English with normal spacing. \s
-                - No Markdown, no asterisks, no underscores, no code fences, no smart quotes, no ellipses, no extra punctuation.
+                Find sources as credible as possible. Favor credible, trusted, and well-known sources.
+                Find at least 3-5 DISTINCT sources.
+                DO NOT REPEAT THE SAME SOURCES
+                Find diverse sources for potential different point-of-views.
+                
+                FIND MOST RECENT NEWS RELATED TO IT.
+                BETWEEN OLD NEWS AND RECENT NEWS ALWAYS FAVOR THE RECENT ONES.
+                
+                Return them in Json, as in the schema provided.
+                
+                You will return an array of sources.
+                Each source contains:
+                - title - Title of the article from that source
+                - url - Url
+                - snippet - Quick Snippet from that website that is related to the claim. 1-2 sentences MAX.
+                - source - Name of the publisher.
+                - date - Date when this source was published ("YYYY/MM/DD")
+                
+                REQUIRED
+                - Unless there is an error of some kind. At least few Sources should be present.
+                
+                GLOBAL ERROR-HANDLING RULES
+                - If any technical or logical error (e.g. no valid sources or invalid claim) happens return empty json with the only field "error".
+                
+                GLOBAL FORMATTING RULES
+                - Produce only the JSON object-nothing else.
+                - Every string must be clean plain UTF-8 English.
+                - Forbidden inside any string: Markdown, bold, italics, code fences, smart quotes, ellipses, unusual symbols, leading/trailing spaces.
                 """;
 
         return """
                 {
-                  "model": "gpt-4o-mini",
+                  "model": "gpt-4o",
                   "tools": [
                     {
                       "type": "web_search_preview",
