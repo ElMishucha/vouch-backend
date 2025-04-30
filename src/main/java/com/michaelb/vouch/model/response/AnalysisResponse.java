@@ -12,21 +12,14 @@ import com.michaelb.vouch.model.aspect.PropagandaAspect;
 import com.michaelb.vouch.model.aspect.SourceSupportAspect;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class ChatGPTAnalysisResponse {
-    FinalVerdictAspect finalVerdict;
-    FactualClarificationAspect factualClarification;
-    SourceSupportAspect sourceSupport;
-    PropagandaAspect propaganda;
-    PersuasiveStrategiesAspect persuasiveStrategies;
-    String error;
-
-    public ChatGPTAnalysisResponse(String error) {
-        this.error = error;
-    }
+public class AnalysisResponse {
+    public FinalVerdictAspect finalVerdict;
+    public FactualClarificationAspect factualClarification;
+    public SourceSupportAspect sourceSupport;
+    public PropagandaAspect propaganda;
+    public PersuasiveStrategiesAspect persuasiveStrategies;
+    public String error;
 }

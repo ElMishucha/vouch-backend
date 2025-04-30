@@ -10,7 +10,4 @@ public class FinalVerdictAspect {
     public String displayText;
     public float authenticity;
     public String verdict;
-
-    public FinalVerdictAspect() {
-    }
 }

@@ -11,14 +11,8 @@ public class PersuasiveStrategiesAspect {
     public String body;
     public List<Technique> techniques;
 
-    public PersuasiveStrategiesAspect() {
-    }
-
     public static class Technique {
         public String name;
         public String description;
-
-        public Technique() {
-        }
     }
 }

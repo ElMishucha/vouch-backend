@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package com.michaelb.vouch.controller;
 
 import com.michaelb.vouch.model.request.FactCheckRequest;

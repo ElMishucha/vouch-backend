@@ -9,10 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class FactCheckResponse {
-    ChatGPTAnalysisResponse analysisResponse;
-    private String error;
+    public AnalysisResponse analysisResponse;
+    public String error;
 }

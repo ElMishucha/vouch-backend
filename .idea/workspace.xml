@@ -5,24 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ca18a45-6a0b-4e3d-9bc6-693920a45dc1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/controller/FactCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/controller/FactCheckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/OpenAIClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FactualClarificationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FactualClarificationAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FinalVerdictAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/FinalVerdictAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PropagandaAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/PropagandaAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/SourceSupportAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/aspect/SourceSupportAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/AnalysisResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/SummaryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/WebSearchResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/FactCheckResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/model/response/FactCheckResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/VouchApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/VouchApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/controller/FactCheckController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/controller/FactCheckController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/OpenAIClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/OpenAIClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Choice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Choice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/OpenAIClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Choice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse$Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/model/ChatGPTResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTAnalysisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTSummaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/integration/openai/service/ChatGPTWebSearchService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/Source.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/Source.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FactualClarificationAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FactualClarificationAspect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FinalVerdictAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/FinalVerdictAspect.class" afterDir="false" />
@@ -30,10 +43,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PersuasiveStrategiesAspect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PropagandaAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/PropagandaAspect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/SourceSupportAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/aspect/SourceSupportAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/request/FactCheckRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/request/FactCheckRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTAnalysisResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTSummaryResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/ChatGPTWebSearchResponse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/FactCheckResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/model/response/FactCheckResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
@@ -80,6 +92,7 @@
   &quot;keyToString&quot;: {
     &quot;Maven.vouch-backend [spring-boot:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -150,6 +163,16 @@
       <workItem from="1744297699514" duration="9747000" />
       <workItem from="1744501839429" duration="2264000" />
       <workItem from="1744594229532" duration="9872000" />
+      <workItem from="1744727101966" duration="10790000" />
+      <workItem from="1744770554023" duration="6000" />
+      <workItem from="1744773426530" duration="60000" />
+      <workItem from="1745003877393" duration="15000" />
+      <workItem from="1745016241696" duration="36840000" />
+      <workItem from="1745242621084" duration="990000" />
+      <workItem from="1745501744001" duration="944000" />
+      <workItem from="1745595919049" duration="1000" />
+      <workItem from="1745852915530" duration="3382000" />
+      <workItem from="1745933973562" duration="9720000" />
     </task>
     <servers />
   </component>

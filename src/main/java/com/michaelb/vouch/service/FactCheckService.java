@@ -6,47 +6,59 @@
 package com.michaelb.vouch.service;
 
 import com.google.gson.Gson;
-import com.michaelb.vouch.integration.openai.service.ChatGPTAnalysisService;
-import com.michaelb.vouch.integration.openai.service.ChatGPTSummaryService;
-import com.michaelb.vouch.integration.openai.service.ChatGPTWebSearchService;
 import com.michaelb.vouch.model.Source;
-import com.michaelb.vouch.model.response.ChatGPTAnalysisResponse;
-import com.michaelb.vouch.model.response.ChatGPTSummaryResponse;
-import com.michaelb.vouch.model.response.ChatGPTWebSearchResponse;
+import com.michaelb.vouch.model.aspect.SourceSupportAspect;
+import com.michaelb.vouch.model.response.AnalysisResponse;
 import com.michaelb.vouch.model.response.FactCheckResponse;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import com.michaelb.vouch.model.response.SummaryResponse;
+import com.michaelb.vouch.model.response.WebSearchResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FactCheckService {
-    private final ChatGPTSummaryService chatGPTSummaryService;
-    private final ChatGPTWebSearchService chatGPTWebSearchService;
-    private final ChatGPTAnalysisService chatGPTAnalysisService;
+    private final SummaryService summaryService;
+    private final WebSearchService webSearchService;
+    private final AnalysisService analysisService;
     private final Gson gson = new Gson();
 
-    FactCheckService(ChatGPTSummaryService chatGPTSummaryService, ChatGPTWebSearchService chatGPTWebSearchService, ChatGPTAnalysisService chatGPTAnalysisService) {
-        this.chatGPTSummaryService = chatGPTSummaryService;
-        this.chatGPTWebSearchService = chatGPTWebSearchService;
-        this.chatGPTAnalysisService = chatGPTAnalysisService;
+    FactCheckService(SummaryService summaryService, WebSearchService webSearchService, AnalysisService analysisService) {
+        this.summaryService = summaryService;
+        this.webSearchService = webSearchService;
+        this.analysisService = analysisService;
     }
 
     public FactCheckResponse factCheck(String claim) {
         System.out.println("Fact-Checking claim: " + claim);
 
-        ChatGPTSummaryResponse summaryResponse = this.chatGPTSummaryService.summarizeClaimForSearch(claim);
-        if (summaryResponse.getError() != null)
-            return new FactCheckResponse(null, summaryResponse.getError());
-        String claimSummary = summaryResponse.getClaimSummary();
+        // Summary
+        SummaryResponse summaryResponse = this.summaryService.summarizeClaimForSearch(claim);
 
-        ChatGPTWebSearchResponse webSearchResponse = this.chatGPTWebSearchService.webSearch(claimSummary);
-        if (webSearchResponse.getError() != null)
-            return new FactCheckResponse(null, webSearchResponse.getError());
-        List<Source> sources = webSearchResponse.getSources();
+        if (summaryResponse.error != null)
+            return new FactCheckResponse(null, summaryResponse.error);
 
-        ChatGPTAnalysisResponse analysisResponse = this.chatGPTAnalysisService.analyze(claim, sources);
-        if (analysisResponse.getError() != null)
-            return new FactCheckResponse(null, analysisResponse.getError());
+        String claimSummary = summaryResponse.claimSummary;
+        System.out.println("Claim Summary: " + claimSummary);
 
+        // WebSearch
+        WebSearchResponse webSearchResponse = this.webSearchService.webSearch(claimSummary);
+
+        if (webSearchResponse.error != null)
+            return new FactCheckResponse(null, webSearchResponse.error);
+
+        List<Source> sources = webSearchResponse.sources;
+
+        // Analysis
+        AnalysisResponse analysisResponse = this.analysisService.analyze(claim, sources);
+
+        if (analysisResponse.error != null) {
+            return new FactCheckResponse(null, analysisResponse.error);
+        }
+
+        // Response
         return new FactCheckResponse(analysisResponse, null);
     }
 }

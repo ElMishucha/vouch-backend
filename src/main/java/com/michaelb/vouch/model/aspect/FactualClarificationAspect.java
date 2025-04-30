@@ -8,7 +8,4 @@ package com.michaelb.vouch.model.aspect;
 public class FactualClarificationAspect {
     public String body;
     public String analysis;
-
-    public FactualClarificationAspect() {
-    }
 }

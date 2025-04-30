@@ -10,7 +10,4 @@ public class PropagandaAspect {
     public String leftSideName;
     public String rightSideName;
     public float biasSlider;
-
-    public PropagandaAspect() {
-    }
 }

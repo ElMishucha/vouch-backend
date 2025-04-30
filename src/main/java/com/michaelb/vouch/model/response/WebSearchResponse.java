@@ -10,13 +10,10 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class ChatGPTWebSearchResponse {
-    List<Source> sources;
-    String error;
+public class WebSearchResponse {
+    public List<Source> sources;
+    public String error;
 }
