@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ca18a45-6a0b-4e3d-9bc6-693920a45dc1" name="Changes" comment="Polished Prompts">
+    <list default="true" id="2ca18a45-6a0b-4e3d-9bc6-693920a45dc1" name="Changes" comment="Custom Prompts">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/VouchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/VouchApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/AnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/SummaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/WebSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/util/OpenAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/michaelb/vouch/service/FactCheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/michaelb/vouch/service/FactCheckService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,28 +50,28 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.vouch-backend [spring-boot:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Micha/IdeaProjects/vouch-backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Micha/IdeaProjects/vouch-backend/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.vouch-backend [spring-boot:run].executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Micha/IdeaProjects/vouch-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Micha/IdeaProjects/vouch-backend/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="vouch-backend [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -133,7 +135,7 @@
       <workItem from="1745595919049" duration="1000" />
       <workItem from="1745852915530" duration="3382000" />
       <workItem from="1745933973562" duration="11034000" />
-      <workItem from="1746023321638" duration="8680000" />
+      <workItem from="1746023321638" duration="17119000" />
     </task>
     <task id="LOCAL-00001" summary="Polished Prompts">
       <option name="closed" value="true" />
@@ -143,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745982059680</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Custom Prompts">
+      <option name="closed" value="true" />
+      <created>1746038154440</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746038154440</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +172,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Polished Prompts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Polished Prompts" />
+    <MESSAGE value="Custom Prompts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Prompts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

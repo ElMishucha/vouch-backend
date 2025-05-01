@@ -74,7 +74,7 @@ public class AnalysisService {
                 Thought Process is required and it should be fairly concise.
                 Your responses should be based on the thought process.
                 
-                It is also really important, that when estimating overall authenticity of the claim, you give the mix of estimate between two things:
+                It is also rea  lly important, that when estimating overall authenticity of the claim, you give the mix of estimate between two things:
                 - Source Support - support from other websites on average.
                 - Logic - pure logic from factual clarification.
                 

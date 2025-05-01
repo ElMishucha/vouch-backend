@@ -16,6 +16,7 @@ import java.util.List;
 
 import com.michaelb.vouch.model.response.SummaryResponse;
 import com.michaelb.vouch.model.response.WebSearchResponse;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +32,7 @@ public class FactCheckService {
         this.analysisService = analysisService;
     }
 
+    @Cacheable(value = "factChecks", key = "#claim")
     public FactCheckResponse factCheck(String claim) {
         System.out.println("Fact-Checking claim: " + claim);
 
